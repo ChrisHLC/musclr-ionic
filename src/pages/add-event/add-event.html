@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Nouvel Événement</h2>
+  <form (ngSubmit)="createEvent()">
+
+    <ion-item>
+
+      <ion-label inline>Nom event</ion-label>
+      <ion-input type="text" name="nom" [(ngModel)]="evenement.nom"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label inline>seance</ion-label>
+      <ion-input type="text" name="seance" [(ngModel)]="evenement.seance"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Start Time</ion-label>
+      <ion-datetime name="startTime" displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD/MM/YYYY HH:mm"
+                    [(ngModel)]="evenement.startTime"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>End Time</ion-label>
+      <ion-datetime name="endTime" displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD/MM/YYYY HH:mm"
+                    [(ngModel)]="evenement.endTime"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label inline>nb participants</ion-label>
+      <ion-input type="number" name="nbParticipants" [(ngModel)]="evenement.nbParticipants"></ion-input>
+    </ion-item>
+
+    <button ion-button full type="submit" color="dark">Full Button</button>
+
+  </form>
+
+  <button ion-button (click)="recordTitle()">
+
+    <ion-icon name="mic"></ion-icon>
+
+  </button>
+
+
+</ion-content>

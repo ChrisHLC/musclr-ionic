@@ -1,0 +1,14 @@
+{
+  "name": "musclr-ionic",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/login",
+      "proxyUrl": "http://localhost:3000/users/login"
+    }
+  ]
+}

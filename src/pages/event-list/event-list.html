@@ -1,0 +1,64 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>list-events</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card *ngFor="let event of listEvents">
+
+    <ion-item>
+      <h2>{{event.nom}}</h2>
+      <p>{{event.startTime}}</p>
+    </ion-item>
+
+    <ion-card-content>
+      <p>{{event.seance}}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="people"></ion-icon>
+          <div>{{event.nbParticipants}}</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small (click)="exportToCalendar(event)">
+          exporter
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small (click)="shareEvent(event)">
+          <ion-icon name="share"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small (click)="pinToNotif(event)">
+          <ion-icon name="bookmark"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small (click)="scheduleNotif(event)">
+          <ion-icon name="bookmark">-1h</ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+  <ion-fab right bottom>
+    <button ion-fab color="dark" (click)="addEvent()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+
+  </ion-fab>
+
+</ion-content>
